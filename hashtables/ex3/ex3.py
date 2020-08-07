@@ -2,9 +2,34 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    # instantiate hash_table (ht)
+    ht = {}
+    # instantiate an insections list
+    intersections = []
+    # loop through the arrs in arrays
+    for arrs in arrays:
+        # loop through numbers (nums) in the arrs
+        for nums in arrs:
+            # if the nums are not in the ht
+            if nums not in ht:
+                # set the value as one
+                ht[nums] = 1
+            # else
+            else:
+                # add to the value
+                ht[nums] += 1
+    
+    # instantiate max_value variable as the max(value) in ht
+    max_value = max(ht.values())
+    # for key, value in the ht items
+    for key, value in ht.items():
+        # if value == max_value
+        if value == max_value:
+            # append the key to the intersections list
+            intersections.append(key)
+    # return intersections
+    return intersections
 
-    return result
 
 
 if __name__ == "__main__":
